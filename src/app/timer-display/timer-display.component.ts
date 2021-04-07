@@ -5,14 +5,13 @@ import {BehaviorSubject} from 'rxjs';
 
 @Component({
   selector: 'app-timer-display',
-  templateUrl: './timer-display.component.html',
-  styleUrls: ['./timer-display.component.scss']
+  templateUrl: './timer-display.component.html'
 })
 export class TimerDisplayComponent implements OnInit {
   active: BehaviorSubject<boolean> = new BehaviorSubject<boolean>(false);
   remaining!: number;
 
-  timeOutSetInterval!: number;
+  timeOutSetInterval!: any;
 
   @Output()
   timerDone: EventEmitter<void> = new EventEmitter<void>();

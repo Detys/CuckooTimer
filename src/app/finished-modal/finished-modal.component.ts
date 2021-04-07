@@ -2,8 +2,7 @@ import {Component, EventEmitter, OnDestroy, OnInit, Output} from '@angular/core'
 
 @Component({
   selector: 'app-finished-modal',
-  templateUrl: './finished-modal.component.html',
-  styleUrls: ['./finished-modal.component.scss']
+  templateUrl: './finished-modal.component.html'
 })
 export class FinishedModalComponent implements OnInit, OnDestroy {
   @Output()
