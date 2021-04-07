@@ -1,0 +1,36 @@
+<form>
+<div class="bg-gradient-to-br from-blue-100 via-blue-200 to-blue-300 min-h-screen pt-10">
+  <div class="container mx-auto">
+    <div class="grid sm:grid-cols-3 gap-5">
+      <div class="flex justify-center align-middle bg-white bg-opacity-70 shadow-lg">
+        <label class="flex  flex-col w-1/2 content-center text-center ">
+          <span class="text-gray-700">Interval (Minutes)</span>
+          <input class="form-input h-10 mt-1 block  border-gray-300 focus:ring focus:border-blue-300 border rounded-lg focus:shadow-outline"
+                 [formControl]="interval"
+                 (keyup)="change()"
+                 required>
+        </label>
+      <div class="text-red-600">
+        <div *ngIf="interval.errors?.required">
+          Interval is required.
+        </div>
+        <div *ngIf="interval.errors?.pattern">
+          Interval must be a number.
+        </div>
+      </div>
+      </div>
+      <div class="bg-white bg-opacity-70 shadow-lg"><app-timer-display (timerDone)="timerDone()"></app-timer-display></div>
+      <div class="bg-white bg-opacity-70 shadow-lg flex justify-center align-middle">
+        <button class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded w-full"
+                type="button"
+                (click)="buttonClick()">
+        {{buttonLabel}}
+      </button></div>
+    </div>
+  </div>
+</div>
+</form>
+<app-finished-modal *ngIf="done" (modalAction)="modalAction($event)"></app-finished-modal>
+
+<!--Modal-->
+<!--opacity-0-->

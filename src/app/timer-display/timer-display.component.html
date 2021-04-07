@@ -1,0 +1,9 @@
+<div class="rounded overflow-hidden w-full">
+  <div class="px-6 py-4">
+    <div class="flex justify-center gap-x-20	">
+      <div class="h-16 w-16 rounded-full bg-red-100 items-center justify-center flex" >{{ remainingHours() | number: '0.0-0' }}</div>
+      <div class="h-16 w-16 rounded-full bg-green-100	text-center items-center justify-center flex" >{{ remainingMinutes() | number: '0.0-0'}}</div>
+      <div class="h-16 w-16 rounded-full bg-blue-100	text-center items-center justify-center flex" >{{remaining % 60 | number: '0.0-0'}}</div>
+    </div>
+  </div>
+</div>
