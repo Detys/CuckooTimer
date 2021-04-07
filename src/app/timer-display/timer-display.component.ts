@@ -37,7 +37,7 @@ export class TimerDisplayComponent implements OnInit {
             this.timerServiceService.reset();
             this.timerDone.emit();
           }
-        }, 10);
+        }, 1000);
       } else {
         clearInterval(this.timeOutSetInterval);
       }
